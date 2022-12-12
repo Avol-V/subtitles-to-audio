@@ -16,3 +16,5 @@ node index.js ./path/to/subtitles.srt
 ```
 
 Saves audio files to the same directory where the input subtitle file is located.
+
+To concatenate output files you can use [concat-audio-by-start-position](https://github.com/Avol-V/concat-audio-by-start-position).
