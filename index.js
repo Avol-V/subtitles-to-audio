@@ -26,6 +26,11 @@ async function main()
 		const name = item.start.replace( /\D/g, '-' );
 		const text = prepareText( item.texts );
 		
+		if ( !text )
+		{
+			continue;
+		}
+		
 		const data = await speechKit({
 			folderId: process.env['SPEECH_KIT_FOLDER_ID'] || '',
 			iamToken: process.env['SPEECH_KIT_IAM_TOKEN'] || '',
