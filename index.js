@@ -4,6 +4,7 @@ import { readSrt } from './lib/read-srt.js';
 import { prepareText } from './lib/prepare-text.js';
 import { speechKit } from './lib/speech-kit.js';
 import { processWithFfmpeg } from './lib/process-with-ffmpeg.js';
+import { hasText } from './lib/has-text.js';
 import {
 	speechKitOptions,
 	processingOptions,
@@ -26,7 +27,7 @@ async function main()
 		const name = item.start.replace( /\D/g, '-' );
 		const text = prepareText( item.texts );
 		
-		if ( !text )
+		if ( !hasText( text ) )
 		{
 			continue;
 		}
